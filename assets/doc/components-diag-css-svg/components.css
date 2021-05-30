@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --burgundy: #54184e;
+  --dull-red: #6e3e3e;
+  --greyish-black: #10110c;
+  --darkest-grey: #1e1f1a;
+  --darker-grey: #2e2f2a;
+  --grey: #4e4e4e;
+  --pink: #f9beee;
+  --wheat: #f5deb3;
+  --transparent: #00000000;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+h1, h2 {
+  font-family: 'Roboto', open-sans;
+  color: var(--wheat);
+}
+
+body {
+  background-color: var(--greyish-black);
+  font-family: 'Roboto', open-sans;
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  margin: auto;
+  margin-top: 4rem;
+  font-size: xx-large;
+  text-align: center;
+  width: 80%;
+  grid-template-areas:
+    'app app app app app app app app app app app app app'
+    '. . . . . . . . . . . . .'
+    'products products products products products products . orders orders orders orders orders orders'
+    '. . . . . . . . . . . . .'
+    'get1 get1 post1 post1 . . . get2 get2 post2 post2 . .'
+    '. . . . . . . . . . . . .'
+    'product product product product product product . order order order order order order'
+    '. . . . . . . . . . . . .'
+    'get3 get3 patch patch delete1 delete1 . get4 get4 delete2 delete2 . .';
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: 3fr 3fr 3fr 1fr 3fr 3fr 3fr 1fr 3fr; 
+  column-gap: 1rem;
+}
+
+.container > div {
+  padding: 1rem;
+}
+
+
+/*  */
+/* types of cells */
+/*  */
+.class {
+  color: var(--wheat);
+  background-color: var(--burgundy);
+}
+
+.rest {
+  border: 3px dashed var(--burgundy);
+  color: var(--burgundy);
+  background-color: var(--pink);
+}
+
+
+/*  */
+/* individual cells */
+/*  */
+.app {
+  grid-area: app;
+}
+.products {
+  grid-area: products;
+}
+.orders {
+  grid-area: orders;
+}
+.product {
+  grid-area: product;
+}
+.order {
+  grid-area: order;
+}
+.get1 {
+  grid-area: get1;
+}
+.get2 {
+  grid-area: get2;
+}
+.get3 {
+  grid-area: get3;
+}
+.get4 {
+  grid-area: get4;
+}
+.post1 {
+  grid-area: post1;
+}
+.post2 {
+  grid-area: post2;
+}
+.patch {
+  grid-area: patch;
+}
+.delete1 {
+  grid-area: delete1;
+}
+.delete2 {
+  grid-area: delete2;
+}

@@ -1,0 +1,181 @@
+@startuml dark theme for class diagrams
+!$THEME = "myDarkTheme"
+
+!$INDIGO = "#6610f2"
+!$PURPLE = "#6f42c1"
+!$PINK = "#e83e8c"
+!$RED = "#d9534f"
+!$ORANGE = "#f47c3c"
+!$YELLOW = "#ffc107"
+!$PUML_GREEN = "#b8d8b8"
+!$GREEN = "#93c54b"
+' This the W3 'Teal':
+!$TEAL = "#40E0D0"
+' !$TEAL_ORIGINAL = "#20c997"
+' VS Code Dark Plus version
+' brighter and bluer:
+' !$TEAL1 = "#4ec9b0"
+!$CYAN = "#29abe0"
+!$BLACK = "#000000"
+!$SECONDARY = "#8e8c84"
+!$INFO = "#29abe0"
+
+!$WHEAT = "#f5deb3"
+!$DULL_RED = "#6e3e3e"
+
+!$DARKEST_BLUE = "#000411"
+!$DARKER_BLUE = "#000922"
+!$BLUE = "#002244"
+!$LIGHTER_BLUE = "#004466"
+!$LIGHTEST_BLUE = "#006688"
+
+!$GREYISH_BLACK = "#10110c"
+!$DARKEST_GREY = "#1e1f1a"
+!$DARKER_GREY = "#2e2f2a"
+!$GREY = "#4e4e4e"
+!$LIGHTER_GREY = "#7e7f7a"
+!$LIGHTEST_GREY = "#cecfca"
+!$GREYISH_WHITE = "#eeefea"
+
+'
+' SET THE BACKGROUND COLOUR
+'
+!if %not(%variable_exists("$BGCOLOR"))
+	!$BGCOLOR = $GREYISH_BLACK
+!endif
+skinparam backgroundColor $BGCOLOR
+
+skinparam useBetaStyle false
+
+!$PRIMARY_DARKEST = $DARKEST_BLUE
+!$PRIMARY_DARKER = $DARKER_BLUE
+!$PRIMARY = $BLUE
+!$PRIMARY_LIGHTER = $LIGHTER_BLUE
+!$PRIMARY_LIGHTEST = $LIGHTEST_BLUE
+
+!$PRIMARY_TEXT = $WHEAT
+
+!$SECONDARY_DARKEST = $DARKEST_GREY
+!$SECONDARY_DARKER = $DARKER_GREY
+!$SECONDARY = $GREY
+!$SECONDARY_LIGHTER = $LIGHTER_GREY
+!$SECONDARY_LIGHTEST = $LIGHTEST_GREY
+
+!$SECONDARY_TEXT = $GREYISH_WHITE
+
+''
+'' PRIMARY SCHEME
+''
+!procedure $primary_scheme()
+	BackgroundColor $PRIMARY
+	BorderColor $SECONDARY_LIGHTEST
+	BorderThickness 1
+	FontColor $PRIMARY_TEXT 
+	HeaderBackgroundColor $PRIMARY_LIGHTER
+	StereotypeFontColor $PRIMARY_DARKER
+	' FooterFontColor $YELLOW doesn't work!
+!endprocedure
+
+''
+'' Global Default Values
+''
+skinparam defaultFontName       "Verdana"
+skinparam defaultFontSize       12
+skinparam dpi                   100
+skinparam shadowing             true
+skinparam roundcorner           8
+skinparam ParticipantPadding    40
+skinparam BoxPadding            40
+skinparam Padding               5
+skinparam stereotype {
+	CBackgroundColor 							$PUML_GREEN
+	' CBackgroundColor 							$TEAL
+	CBorderColor 									$BLACK
+	ABackgroundColor 							$CYAN
+	ABorderColor 									$BLACK
+	' IBackgroundColor 							$DANGER_LIGHT
+	IBorderColor 									$BLACK
+	EBackgroundColor 							$ORANGE
+	EBorderColor 									$BLACK
+	' NBackgroundColor 							$INFO_LIGHTER
+	NBorderColor 									$BLACK
+}
+
+'' 
+'' BLOCK SKINPARAMS
+''
+skinparam title {
+	FontColor 										$PRIMARY_TEXT
+	BorderColor 									$SECONDARY_LIGHTEST
+	FontSize 											20
+	BorderRoundCorner 						8
+	BorderThickness 							1
+	BackgroundColor 							$PRIMARY
+}
+
+skinparam arrow {
+	Thickness 										2
+	Color 												$SECONDARY_LIGHTEST
+	FontColor 										$SECONDARY_TEXT
+}
+
+skinparam class {
+	$primary_scheme()
+	AttributeFontColor $PRIMARY_TEXT
+	AttributeFontSize 11
+}
+
+skinparam participant {
+	$primary_scheme()
+	BackgroundColor $PRIMARY_LIGHTER
+}
+
+skinparam sequence {
+	$primary_scheme()
+	BackgroundColor $PRIMARY
+	BorderColor $SECONDARY_LIGHTEST
+	BorderThickness 1
+	FontColor $PRIMARY_TEXT
+	HeaderBackgroundColor $PRIMARY
+	StereotypeFontColor $DARK
+		
+	BoxBackgroundColor $PRIMARY_LIGHTEST
+	BoxBorderColor $PRIMARY_DARKER
+	BoxFontColor $PRIMARY_DARKER
+	LifeLineBorderColor $SECONDARY
+	LifeLineBorderThickness 3
+	LifeLineBackgroundColor $SECONDARY
+	''
+	GroupBorderColor $SECONDARY_DARKER
+	GroupFontColor $SECONDARY_DARKER
+	GroupHeaderFontColor $INFO
+	GroupBackgroundColor $SECONDARY
+	GroupHeaderBackgroundColor #grey
+	''
+	DividerBackgroundColor $SECONDARY_DARKER
+	DividerBorderColor $SECONDARY_DARKER
+	DividerBorderThickness 2
+	DividerFontColor $SECONDARY_LIGHTER
+	''
+	ReferenceBackgroundColor $BGCOLOR
+	ReferenceBorderColor $SECONDARY_DARKER
+	ReferenceFontColor $PRIMARY_TEXT
+	ReferenceHeaderBackgroundColor $SECONDARY
+}
+
+skinparam component {
+	$primary_scheme()
+}
+
+skinparam Diagram {
+  BorderColor $SECONDARY_LIGHTER
+  BorderThickness 0.8
+}
+
+skinparam legend {
+	BackgroundColor $SECONDARY
+	BorderColor $SECONDARY_DARKER
+	FontColor $PRIMARY_TEXT
+}
+
+@enduml

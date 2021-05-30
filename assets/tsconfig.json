@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2020",
+    "jsx": "preserve",
+    "strictFunctionTypes": true,
+    "sourceMap": true
+  },
+  "include": [
+    // This file has to be in the same or the parent folder
+    // of the scripts folder(s). 
+    "./scripts/"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*"
+  ],
+  "experimentalDecorators": true
+}

@@ -1,0 +1,10 @@
+{
+  "default": true,
+  "first-line-heading": {
+    "level": 2
+  },
+  "blanks-around-headings": {
+    "lines_above": 1,
+    "lines_below": 1
+  }
+}

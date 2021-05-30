@@ -1,0 +1,41 @@
+@startuml "Classes"
+!include assets/puml-theme-dark.puml
+scale 2
+
+class OurAPI {
+}
+
+class Products {
+  {method} GET
+  {method} POST
+}
+
+class Orders {
+  {method} GET
+  {method} POST
+}
+
+class Product {
+  {method} GET
+  {method} PATCH
+  {method} DELETE
+}
+
+class Order {
+  {method} GET
+  {method} DELETE
+}
+
+OurAPI -[hidden]- Products 
+OurAPI -[hidden]- Orders 
+Products -[hidden]- Product 
+Orders -[hidden]- Order  
+
+' skinparam component {
+'   boxPadding 50
+'   fontColor white
+'   backgroundColor purple
+'   bordercolor purple 
+' }
+
+@enduml

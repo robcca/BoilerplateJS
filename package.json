@@ -1,0 +1,44 @@
+{
+  "name": "restful-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "assets/scripts/server.js",
+  "scripts": {
+    "start": "supervisor assets/scripts/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "scriptsComments": {
+    "start": [
+      "Required because a local install of supervisor",
+      "won't run from the command line.",
+      "Run 'npm start' at the CLI."
+    ]
+  },
+  "author": "Robert Cardwell",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-css-modules": "^2.11.0",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "prettier": "^2.2.1",
+    "supervisor": "^0.12.0"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.9",
+    "morgan": "^1.10.0"
+  },
+  "dependenciesComments": {
+    "morgan": "Logging middleware for Node."
+  }
+}

@@ -1,0 +1,11 @@
+@startuml state diagram
+!include assets/puml-theme-dark.puml
+scale 2
+
+[Orders] ..> [Menu] : use
+[Orders] ..> [Payments] : use
+[Customer] ..> [Orders] :use
+
+
+
+@enduml

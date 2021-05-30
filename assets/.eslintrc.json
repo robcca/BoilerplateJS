@@ -1,0 +1,52 @@
+{
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:css-modules/recommended",
+    "eslint:recommended"
+  ],
+  "plugins": ["html", "css-modules"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "arrow-parens": "off",
+    "class-methods-use-this": "off",
+    "comma-dangle": "off",
+    "import/extensions":
+    // For import statements, require that
+    // all extensions are omitted, except for "js".
+    // Js extension required by ES6.
+    ["error", "never", { "js": "always" }],
+    "linebreak-style": ["error", "windows"],
+    "max-classes-per-file": "off", //turn this back on after the course
+    // "no-unused-vars": "error",
+    // to suppress 'next' in router:
+    "no-unused-vars": ["error", { "argsIgnorePattern": "next"}],
+    // "arrow-parens": ["error", "as-needed"],
+    "no-console": "off",
+    "no-alert": "off",
+    "no-undef": "off",
+    "no-multiple-empty-lines": "off",
+    // "no-trailing-spaces": "off",
+    "no-restricted-syntax": [
+      //disallowing these is equivalent to allowing ForOfStatement
+      "error",
+      "ForInStatement",
+      "LabeledStatement",
+      "WithStatement"
+    ],
+    "no-underscore-dangle": "off",
+    "no-use-before-define": "off",
+    "operator-linebreak": "off",
+    "spaced-comment": "off"
+  }
+}
